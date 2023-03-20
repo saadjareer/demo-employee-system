@@ -24,6 +24,15 @@ public class EmployeeController {
     }
 
 
+    @GetMapping(value = "/employeesListDatabase")
+    public Iterable<Employee> getEmployeesFromDatabase() {
+        
+        Iterable<Employee> employees = employeeService.findAllFromDatabase();
+
+        return employees;
+    }
+
+
     @GetMapping(value = "/employee")
     public Employee getTestEmployee() {
 
